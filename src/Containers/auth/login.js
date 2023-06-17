@@ -1,19 +1,25 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import axios from 'axios'
 import './login.css'
 import img from '../../Assets/login.png';
 import logo from '../../Assets/LogoDZiyara.png';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 
 
 const Login  = ({ setIsOpen }) => {
 
-    //login variable 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const navigate = useNavigate();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-
+  useEffect(() => {
+    const access_token = localStorage.getItem('access_token');
+    console.log(access_token)
+    if (access_token) {
+      navigate('/'); 
+    }
+  }, []);
     //login function 
 
     async function login(e)  {
@@ -26,7 +32,7 @@ const Login  = ({ setIsOpen }) => {
             axios.defaults.headers['Authorization'] = "JWT " + response.data.access;
             localStorage.setItem('access_token', response.data.access_token);
             localStorage.setItem('refresh_token', response.data.refresh_token);
-            return response.data;
+            navigate('/'); 
         } catch (error) {
             throw error;
         }

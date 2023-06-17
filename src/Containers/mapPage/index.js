@@ -37,7 +37,7 @@ function StarRating({ rating }) {
 }
 
 function Map() {
-  const baseUrl = 'https://dziyara.onrender.com/';
+  const baseUrl = 'https://dziyara.onrender.com';
 
   const [searchQuery, setSearchQuery] = useState('');
   const [states, setStates] = useState([]);
@@ -88,7 +88,7 @@ function Map() {
     console.log(accessToken)
     if (accessToken) {
       const commentData = {
-        user:4,
+        user:'merwan',
         site: id,
         content: commentContent,
       };

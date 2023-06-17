@@ -13,6 +13,7 @@ const NavBar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('access_token');
+        navigate('/');
     };
     const [activeItem, setActiveItem] = useState('home');
 

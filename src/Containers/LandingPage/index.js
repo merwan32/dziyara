@@ -1,4 +1,4 @@
-import React from "react";
+
 import NavBar from '../../Components/Header/Header.jsx';
 import './index.css';
 import Home from './home.jsx'
@@ -6,41 +6,26 @@ import News from './news.jsx'
 import Tendance from "./tendance.jsx";
 import About from "./about.jsx";
 import Footer from "../../Components/Footer/Footer.jsx";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 
 
 const LandingPage = () => {
-    const events = [
-        {
-            "name": "Yennayer",
-            "description" : "Justo dolor mollis sapien a accumsan enim ipsum, nec neque. Sed et ultrices risus. Aliquam auctor, erat eget vehicula sodales, enim ligula malesuada ipsum.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Berb%C3%A8res_folklore_Algeria.jpg/200px-Berb%C3%A8res_folklore_Algeria.jpg"
-        },
-        {
-            "name": "Janvier",
-            "description" : "Justo dolor mollis sapien a accumsan enim ipsum, nec neque. Sed et ultrices risus. Aliquam auctor, erat eget vehicula sodales, enim ligula malesuada ipsum.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Berb%C3%A8res_folklore_Algeria.jpg/200px-Berb%C3%A8res_folklore_Algeria.jpg"
-        },
-        {
-            "name": "Yennayer",
-            "description" : "Justo dolor mollis sapien a accumsan enim ipsum, nec neque. Sed et ultrices risus. Aliquam auctor, erat eget vehicula sodales, enim ligula malesuada ipsum.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Berb%C3%A8res_folklore_Algeria.jpg/200px-Berb%C3%A8res_folklore_Algeria.jpg"
-        },
-        {
-            "name": "Janvier",
-            "description" : "Justo dolor mollis sapien a accumsan enim ipsum, nec neque. Sed et ultrices risus. Aliquam auctor, erat eget vehicula sodales, enim ligula malesuada ipsum.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Berb%C3%A8res_folklore_Algeria.jpg/200px-Berb%C3%A8res_folklore_Algeria.jpg"
-        },
-        {
-            "name": "Yennayer",
-            "description" : "Justo dolor mollis sapien a accumsan enim ipsum, nec neque. Sed et ultrices risus. Aliquam auctor, erat eget vehicula sodales, enim ligula malesuada ipsum.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Berb%C3%A8res_folklore_Algeria.jpg/200px-Berb%C3%A8res_folklore_Algeria.jpg"
-        },
-        {
-            "name": "Janvier",
-            "description" : "Justo dolor mollis sapien a accumsan enim ipsum, nec neque. Sed et ultrices risus. Aliquam auctor, erat eget vehicula sodales, enim ligula malesuada ipsum.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Berb%C3%A8res_folklore_Algeria.jpg/200px-Berb%C3%A8res_folklore_Algeria.jpg"
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        const fetchEvents = async () => {
+        try {
+            const response = await axios.get('https://dziyara.onrender.com/api/events/');
+            setEvents(response.data);
+        } catch (error) {
+            console.error('Error fetching events:', error);
         }
-    ]
+        };
+        console.log(events)
+        fetchEvents();
+    }, []);
 
     const places = [
         {
