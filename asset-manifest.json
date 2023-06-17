@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/merwan32/dziyara/static/css/main.f98b1c49.chunk.css",
+    "main.js": "/merwan32/dziyara/static/js/main.f75483b7.chunk.js",
+    "main.js.map": "/merwan32/dziyara/static/js/main.f75483b7.chunk.js.map",
+    "runtime-main.js": "/merwan32/dziyara/static/js/runtime-main.a9bed4d2.js",
+    "runtime-main.js.map": "/merwan32/dziyara/static/js/runtime-main.a9bed4d2.js.map",
+    "static/css/2.6428d94d.chunk.css": "/merwan32/dziyara/static/css/2.6428d94d.chunk.css",
+    "static/js/2.c20553bf.chunk.js": "/merwan32/dziyara/static/js/2.c20553bf.chunk.js",
+    "static/js/2.c20553bf.chunk.js.map": "/merwan32/dziyara/static/js/2.c20553bf.chunk.js.map",
+    "static/js/3.3a97164d.chunk.js": "/merwan32/dziyara/static/js/3.3a97164d.chunk.js",
+    "static/js/3.3a97164d.chunk.js.map": "/merwan32/dziyara/static/js/3.3a97164d.chunk.js.map",
+    "index.html": "/merwan32/dziyara/index.html",
+    "static/css/2.6428d94d.chunk.css.map": "/merwan32/dziyara/static/css/2.6428d94d.chunk.css.map",
+    "static/css/main.f98b1c49.chunk.css.map": "/merwan32/dziyara/static/css/main.f98b1c49.chunk.css.map",
+    "static/js/2.c20553bf.chunk.js.LICENSE.txt": "/merwan32/dziyara/static/js/2.c20553bf.chunk.js.LICENSE.txt",
+    "static/media/LogoDZiyara.d847308c.png": "/merwan32/dziyara/static/media/LogoDZiyara.d847308c.png",
+    "static/media/login.95769f8a.png": "/merwan32/dziyara/static/media/login.95769f8a.png",
+    "static/media/map1.e1710310.png": "/merwan32/dziyara/static/media/map1.e1710310.png",
+    "static/media/map2.de092a80.png": "/merwan32/dziyara/static/media/map2.de092a80.png",
+    "static/media/ministre.bdcad54a.png": "/merwan32/dziyara/static/media/ministre.bdcad54a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9bed4d2.js",
+    "static/css/2.6428d94d.chunk.css",
+    "static/js/2.c20553bf.chunk.js",
+    "static/css/main.f98b1c49.chunk.css",
+    "static/js/main.f75483b7.chunk.js"
+  ]
+}
