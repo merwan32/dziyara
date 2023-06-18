@@ -72,42 +72,56 @@ function Map() {
       .get(`https://dziyara.onrender.com/api/touristic-sites/by-name/?name=${state.name}`)
       .then((response) => {
         const data = response.data;
-        console.log(data)
+        console.log(data);
         setSelectedState(data);
       })
       .catch((error) => {
         console.error('Error:', error);
       });
   };
-
+  
   const [commentContent, setCommentContent] = useState('');
+  
   const handleCommentSubmit = (event, id) => {
     event.preventDefault();
   
     const accessToken = localStorage.getItem('access_token');
-    console.log(accessToken)
+    console.log(accessToken);
+    
     if (accessToken) {
       const commentData = {
-        user:'merwan',
+        user: 'merwan',
         site: id,
         content: commentContent,
       };
   
-      axios.post('https://dziyara.onrender.com/api/comments/add/', commentData, {
-        headers: {
-          Authorization: `Token ${accessToken}`,
-        },
-      })
-        .then(response => {
-          console.log(response.data);
+      axios
+        .post('https://dziyara.onrender.com/api/comments/add/', commentData, {
+          headers: {
+            Authorization: `Token ${accessToken}`,
+          },
         })
-        .catch(error => {
+        .then((response) => {
+          console.log(response.data);
+          axios
+            .get(`https://dziyara.onrender.com/api/touristic-sites/by-name/?name=${selectedState.site_name}`)
+            .then((response) => {
+              const data = response.data;
+              console.log(data);
+              setSelectedState(data);
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+        })
+        .catch((error) => {
           console.error('Error creating comment:', error);
         });
     } else {
       window.location.href = '/login';
     }
   };
+  
 
   const filteredStates = states.filter(state =>
     state.name.toLowerCase().includes(searchQuery.toLowerCase())
